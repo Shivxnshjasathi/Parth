@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:parth2/profile.dart';
 import 'package:parth2/result.dart';
 
 class Home1 extends StatefulWidget {
@@ -14,6 +14,8 @@ class Home1 extends StatefulWidget {
 }
 
 class _Home1 extends State<Home1> {
+  String word = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +46,15 @@ class _Home1 extends State<Home1> {
                           fontSize: 30,
                         ),
                       ),
-                      const Icon(Icons.menu_rounded)
+                      IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.bottomToTop,
+                                    child: profile()));
+                          },
+                          icon: Icon(Icons.account_circle))
                     ],
                   ),
                 ),
@@ -53,7 +63,7 @@ class _Home1 extends State<Home1> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
-                height: MediaQuery.of(context).size.height / 10,
+                height: MediaQuery.of(context).size.height / 8,
                 width: MediaQuery.of(context).size.width / 1.1,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -86,7 +96,7 @@ class _Home1 extends State<Home1> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "👋 Hey ! I am SpeakWell Let me know if you want my help or have any questions ",
+                      "Improvement in your communication skills is now Accessible and Efficient!",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.alata(
                         fontWeight: FontWeight.w300,
@@ -113,16 +123,8 @@ class _Home1 extends State<Home1> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.white10),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Container(
-                        height: MediaQuery.of(context).size.height / 3,
-                        width: MediaQuery.of(context).size.width / 1.5,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color:Colors.white10),
+                        child: Image.asset(
+                            "assets/Voice_control-bro-removebg-preview.png"),
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width / 20,
@@ -133,6 +135,20 @@ class _Home1 extends State<Home1> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.white10),
+                        child: Image.asset(
+                            "assets/Voice_control-amico-removebg-preview.png"),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 20,
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height / 3,
+                        width: MediaQuery.of(context).size.width / 1.5,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white10),
+                        child: Image.asset(
+                            "assets/Voice_control-pana-removebg-preview.png"),
                       ),
                     ],
                   ),
@@ -163,12 +179,13 @@ class _Home1 extends State<Home1> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.white10),
-                        child: const Padding(
+                        child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20.0),
                           child: TextField(
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'Enter Your Word'),
+                            onChanged: (value) => word = value,
                           ),
                         ),
                       ),
@@ -178,7 +195,7 @@ class _Home1 extends State<Home1> {
                               context,
                               PageTransition(
                                   type: PageTransitionType.bottomToTop,
-                                  child: const HomePage()));
+                                  child: HomePage(word)));
                         },
                         child: Container(
                             height: MediaQuery.of(context).size.height / 10,
@@ -186,8 +203,7 @@ class _Home1 extends State<Home1> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: Colors.white10),
-                            child: const Icon(Icons.add,
-                                color: Colors.white)),
+                            child: const Icon(Icons.add, color: Colors.white)),
                       ),
                     ],
                   ),

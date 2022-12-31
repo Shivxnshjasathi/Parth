@@ -25,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: const Color(0xff1c202b),
 
 
+
     );
   }
 }
