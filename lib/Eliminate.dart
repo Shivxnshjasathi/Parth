@@ -38,7 +38,7 @@ class _Home1 extends State<Home1> {
                       const Icon(Icons.arrow_circle_left_outlined,
                           color: Colors.white),
                       Text(
-                        "Hello",
+                        "SpeakWell",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.alata(
                           fontWeight: FontWeight.w400,
@@ -63,7 +63,7 @@ class _Home1 extends State<Home1> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
-                height: MediaQuery.of(context).size.height / 8,
+                height: MediaQuery.of(context).size.height / 7,
                 width: MediaQuery.of(context).size.width / 1.1,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),

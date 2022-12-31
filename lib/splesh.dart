@@ -21,11 +21,17 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: const Color(0xff1c202b),
-
-
-
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(150.0),
+          child: Image.asset(
+            "assets/WhatsApp_Image_2022-12-31_at_19.37.17-removebg-preview.png",
+            color: Colors.white,
+          ),
+        ),
+      ),
     );
   }
 }

@@ -46,10 +46,11 @@ class _HomePageState extends State<HomePage> {
                     const EdgeInsets.symmetric(horizontal: 50.0, vertical: 100),
                 child: Text(
                   textSample,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w500,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.alata(
+                    fontWeight: FontWeight.w400,
                     color: Colors.white,
-                    fontSize: 60,
+                    fontSize: 20,
                   ),
                 ),
               )),
@@ -104,20 +105,23 @@ class _HomePageState extends State<HomePage> {
                                         MediaQuery.of(context).size.height / 30,
                                   ),
                                   InkWell(
-                                    onTap: (){
+                                    onTap: () {
                                       Navigator.push(
                                           context,
                                           PageTransition(
-                                              type: PageTransitionType.bottomToTop,
+                                              type: PageTransitionType
+                                                  .bottomToTop,
                                               child: Home1()));
                                     },
                                     child: Container(
                                       height:
-                                          MediaQuery.of(context).size.height / 8,
-                                      width:
-                                          MediaQuery.of(context).size.width / 1.1,
+                                          MediaQuery.of(context).size.height /
+                                              8,
+                                      width: MediaQuery.of(context).size.width /
+                                          1.1,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(20),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
                                           color: Colors.white10),
                                       child: Center(
                                         child: Text(
